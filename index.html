@@ -2,89 +2,130 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Eric Niyonkuru</title>
+<title>Eric Niyonkuru | EU–Africa Trade & Supply Chain</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0B1215;
-  color: white;
-  text-align: center;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0B1215;
+    color: white;
+    text-align: center;
+  }
 
-/* LANGUAGE SWITCH */
-.lang-switch {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
+  .lang-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
 
-.lang-switch button {
-  margin-left: 5px;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  background: #00FFD1;
-  color: black;
-  border-radius: 4px;
-}
+  .lang-switch button {
+    margin-left: 6px;
+    padding: 7px 12px;
+    border: none;
+    cursor: pointer;
+    background: #142124;
+    color: #00FFD1;
+    border: 1px solid #00FFD1;
+    border-radius: 6px;
+    font-weight: bold;
+  }
 
-/* CONTENT */
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 100px 20px;
-}
+  .lang-switch button.active {
+    background: #00FFD1;
+    color: black;
+  }
 
-h1 { font-size: 3rem; }
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 120px 20px 60px;
+  }
 
-.highlight {
-  color: #00FFD1;
-  margin: 10px 0;
-}
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
 
-p { color: #aaa; }
+  h2 {
+    font-size: 2.2rem;
+    margin-top: 90px;
+  }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #00FFD1;
-  color: black;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
+  .highlight {
+    color: #00FFD1;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 
-.section { margin-top: 80px; }
+  p {
+    color: #c7d0d5;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 760px;
+    margin: 18px auto;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 28px;
+    background: #00FFD1;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  .section {
+    margin-top: 70px;
+  }
+
+  @media (max-width: 600px) {
+    .lang-switch {
+      position: static;
+      padding-top: 20px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    .container {
+      padding-top: 60px;
+    }
+  }
 </style>
 </head>
 
 <body>
 
-<!-- LANGUAGE BUTTONS -->
 <div class="lang-switch">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('fr')">FR</button>
-  <button onclick="setLang('sw')">SW</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
+  <button id="btn-fr" onclick="setLang('fr')">FR</button>
+  <button id="btn-nl" onclick="setLang('nl')">NL</button>
+  <button id="btn-sw" onclick="setLang('sw')">SW</button>
 </div>
 
 <div class="container">
-
   <h1>Eric Niyonkuru</h1>
 
   <p class="highlight" id="title"></p>
   <p id="desc"></p>
 
-  <a href="#" class="btn" id="contact"></a>
+  <a href="mailto:eric@ericniyonkuru.com" class="btn" id="contact"></a>
 
   <div class="section">
     <h2 id="aboutTitle"></h2>
     <p id="aboutText"></p>
   </div>
 
+  <div class="section">
+    <h2 id="insightsTitle"></h2>
+    <p id="insightsText"></p>
+  </div>
 </div>
 
 <script>
@@ -94,36 +135,68 @@ const content = {
     desc: "I analyze and simplify cross-border trade, logistics inefficiencies, and supply chain systems between Europe and Africa.",
     contact: "Contact Me",
     aboutTitle: "About",
-    aboutText: "Based in Belgium and originally from Burundi, I operate at the intersection of emerging and structured markets."
+    aboutText: "Based in Belgium and originally from Burundi, I operate at the intersection of emerging and structured markets.",
+    insightsTitle: "Insights",
+    insightsText: "I focus on trade inefficiencies, logistics costs, market-entry barriers, and supply chain opportunities between Europe and Africa."
   },
 
   fr: {
     title: "Analyse du commerce et des chaînes d'approvisionnement UE–Afrique",
-    desc: "J'analyse et simplifie le commerce transfrontalier, les inefficacités logistiques et les systèmes de supply chain.",
+    desc: "J'analyse et simplifie le commerce transfrontalier, les inefficacités logistiques et les systèmes de chaînes d'approvisionnement entre l'Europe et l'Afrique.",
     contact: "Contactez-moi",
     aboutTitle: "À propos",
-    aboutText: "Basé en Belgique et originaire du Burundi, j'interviens à l'intersection des marchés émergents et structurés."
+    aboutText: "Basé en Belgique et originaire du Burundi, j'interviens à l'intersection des marchés émergents et des marchés structurés.",
+    insightsTitle: "Analyses",
+    insightsText: "Je me concentre sur les inefficacités commerciales, les coûts logistiques, les barrières d'entrée sur les marchés et les opportunités de supply chain entre l'Europe et l'Afrique."
+  },
+
+  nl: {
+    title: "Inzichten in EU–Afrika handel en supply chain",
+    desc: "Ik analyseer en vereenvoudig grensoverschrijdende handel, logistieke inefficiënties en supply-chain-systemen tussen Europa en Afrika.",
+    contact: "Contacteer mij",
+    aboutTitle: "Over mij",
+    aboutText: "Ik ben gevestigd in België en kom oorspronkelijk uit Burundi. Ik werk op het kruispunt van opkomende en gestructureerde markten.",
+    insightsTitle: "Inzichten",
+    insightsText: "Ik focus op handelsinefficiënties, logistieke kosten, markttoegangsbarrières en supply-chain-kansen tussen Europa en Afrika."
   },
 
   sw: {
-    title: "Uchambuzi wa Biashara kati ya Ulaya na Afrika",
-    desc: "Ninachambua na kurahisisha biashara ya mipakani na mifumo ya ugavi.",
+    title: "Uchambuzi wa Biashara na Mifumo ya Ugavi kati ya Ulaya na Afrika",
+    desc: "Ninachambua na kurahisisha biashara ya mipakani, changamoto za usafirishaji, na mifumo ya ugavi kati ya Ulaya na Afrika.",
     contact: "Wasiliana nami",
     aboutTitle: "Kuhusu",
-    aboutText: "Niko Ubelgiji na natoka Burundi, nikifanya kazi kati ya masoko yanayokua na yaliyoendelea."
+    aboutText: "Niko Ubelgiji na natoka Burundi. Ninafanya kazi katika makutano ya masoko yanayokua na masoko yaliyojipanga.",
+    insightsTitle: "Uchambuzi",
+    insightsText: "Ninazingatia changamoto za biashara, gharama za usafirishaji, vizuizi vya kuingia sokoni, na fursa za mifumo ya ugavi kati ya Ulaya na Afrika."
   }
 };
 
 function setLang(lang) {
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("desc").innerText = content[lang].desc;
-  document.getElementById("contact").innerText = content[lang].contact;
-  document.getElementById("aboutTitle").innerText = content[lang].aboutTitle;
-  document.getElementById("aboutText").innerText = content[lang].aboutText;
+  if (!content[lang]) lang = "en";
+
+  document.documentElement.lang = lang;
+
+  document.getElementById("title").textContent = content[lang].title;
+  document.getElementById("desc").textContent = content[lang].desc;
+  document.getElementById("contact").textContent = content[lang].contact;
+  document.getElementById("aboutTitle").textContent = content[lang].aboutTitle;
+  document.getElementById("aboutText").textContent = content[lang].aboutText;
+  document.getElementById("insightsTitle").textContent = content[lang].insightsTitle;
+  document.getElementById("insightsText").textContent = content[lang].insightsText;
+
+  localStorage.setItem("preferredLanguage", lang);
+
+  document.querySelectorAll(".lang-switch button").forEach(button => {
+    button.classList.remove("active");
+  });
+
+  document.getElementById("btn-" + lang).classList.add("active");
 }
 
-// Default language
-setLang('en');
+document.addEventListener("DOMContentLoaded", function () {
+  const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+  setLang(savedLanguage);
+});
 </script>
 
 </body>
