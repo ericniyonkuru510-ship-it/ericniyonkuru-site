@@ -47,9 +47,12 @@ function setLang(lang) {
     }
   });
 
-  document.querySelectorAll("[data-lang-option]").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.langOption === lang);
-  });
+  const translatableElements = document.querySelectorAll(".translate-only [data-i18n]");
+
+translatableElements.forEach(el => {
+  const key = el.getAttribute("data-i18n");
+  el.textContent = translations[lang][key];
+});
 
   localStorage.setItem("language", lang);
   document.documentElement.lang = lang;
