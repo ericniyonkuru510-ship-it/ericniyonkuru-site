@@ -1,130 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Eric Niyonkuru | EU–Africa Trade & Supply Chain</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Eric Niyonkuru</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0B1215;
-      color: white;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0B1215;
+  color: white;
+  text-align: center;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
-      text-align: center;
-    }
+/* LANGUAGE SWITCH */
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+.lang-switch button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background: #00FFD1;
+  color: black;
+  border-radius: 4px;
+}
 
-    h2 {
-      margin-top: 60px;
-      font-size: 2rem;
-    }
+/* CONTENT */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 100px 20px;
+}
 
-    p {
-      color: #aaa;
-      max-width: 700px;
-      margin: 10px auto;
-    }
+h1 { font-size: 3rem; }
 
-    .highlight {
-      color: #00FFD1;
-    }
+.highlight {
+  color: #00FFD1;
+  margin: 10px 0;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #00FFD1;
-      color: black;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
+p { color: #aaa; }
 
-    .section {
-      margin-top: 60px;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #00FFD1;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
 
-    .card {
-      background: #111;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 8px;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      font-size: 0.8rem;
-      color: #666;
-    }
-  </style>
+.section { margin-top: 80px; }
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    
-    <!-- HERO -->
-    <h1>Eric Niyonkuru</h1>
-    <p class="highlight">EU–Africa Trade & Supply Chain Insights</p>
-    <p>I analyze and simplify cross-border trade, logistics inefficiencies, and supply chain systems between Europe and Africa.</p>
-    
-    <a href="#" class="btn">Connect With Me</a>
+<!-- LANGUAGE BUTTONS -->
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('sw')">SW</button>
+</div>
 
-    <!-- ABOUT -->
-    <div class="section">
-      <h2>About</h2>
-      <p>
-        Based in Belgium and originally from Burundi, I operate at the intersection of emerging and structured markets.
-        I focus on understanding how trade systems function, where inefficiencies exist, and how businesses can navigate them.
-      </p>
-    </div>
+<div class="container">
 
-    <!-- INSIGHTS -->
-    <div class="section">
-      <h2>Insights</h2>
+  <h1>Eric Niyonkuru</h1>
 
-      <div class="card">
-        <h3>Why EU–Africa Trade Is Inefficient</h3>
-        <p>Breaking down structural inefficiencies in cross-border logistics and trade flows.</p>
-      </div>
+  <p class="highlight" id="title"></p>
+  <p id="desc"></p>
 
-      <div class="card">
-        <h3>Hidden Costs in Supply Chains</h3>
-        <p>Where margins are lost between Europe and African markets.</p>
-      </div>
+  <a href="#" class="btn" id="contact"></a>
 
-      <div class="card">
-        <h3>Market Entry Barriers</h3>
-        <p>Why small businesses struggle to expand across borders.</p>
-      </div>
-
-    </div>
-
-    <!-- CONTACT -->
-    <div class="section">
-      <h2>Contact</h2>
-      <p>Open to collaboration, internships, and strategic discussions.</p>
-      <p>Email: eric@yourdomain.com</p>
-    </div>
-
-    <footer>
-      © 2026 Eric Niyonkuru
-    </footer>
-
+  <div class="section">
+    <h2 id="aboutTitle"></h2>
+    <p id="aboutText"></p>
   </div>
+
+</div>
+
+<script>
+const content = {
+  en: {
+    title: "EU–Africa Trade & Supply Chain Insights",
+    desc: "I analyze and simplify cross-border trade, logistics inefficiencies, and supply chain systems between Europe and Africa.",
+    contact: "Contact Me",
+    aboutTitle: "About",
+    aboutText: "Based in Belgium and originally from Burundi, I operate at the intersection of emerging and structured markets."
+  },
+
+  fr: {
+    title: "Analyse du commerce et des chaînes d'approvisionnement UE–Afrique",
+    desc: "J'analyse et simplifie le commerce transfrontalier, les inefficacités logistiques et les systèmes de supply chain.",
+    contact: "Contactez-moi",
+    aboutTitle: "À propos",
+    aboutText: "Basé en Belgique et originaire du Burundi, j'interviens à l'intersection des marchés émergents et structurés."
+  },
+
+  sw: {
+    title: "Uchambuzi wa Biashara kati ya Ulaya na Afrika",
+    desc: "Ninachambua na kurahisisha biashara ya mipakani na mifumo ya ugavi.",
+    contact: "Wasiliana nami",
+    aboutTitle: "Kuhusu",
+    aboutText: "Niko Ubelgiji na natoka Burundi, nikifanya kazi kati ya masoko yanayokua na yaliyoendelea."
+  }
+};
+
+function setLang(lang) {
+  document.getElementById("title").innerText = content[lang].title;
+  document.getElementById("desc").innerText = content[lang].desc;
+  document.getElementById("contact").innerText = content[lang].contact;
+  document.getElementById("aboutTitle").innerText = content[lang].aboutTitle;
+  document.getElementById("aboutText").innerText = content[lang].aboutText;
+}
+
+// Default language
+setLang('en');
+</script>
 
 </body>
 </html>
